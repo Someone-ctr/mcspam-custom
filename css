@@ -1,0 +1,345 @@
+ @import url(http://fonts.googleapis.com/css?family=Rubik);
+        /* RESET CSS
+         * --------------------------------------- */
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre,
+        form, fieldset, input, textarea, p, blockquote, th, td {
+            padding: 0;
+            margin: 0; }
+
+        a {
+            text-decoration: none;
+            color: #23262A; }
+
+        fieldset, img {
+            border: 0; }
+
+        strong {
+            font-weight: bold; }
+
+        ol, ul {
+            list-style: none;
+            margin: 0;
+            padding: 0; }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0; }
+
+        /* BASE CSS
+         * --------------------------------------- */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow-x: hidden !important;
+            background-color: #26292D;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-family: 'Rubik', sans-serif; }
+
+        body ::-moz-selection {
+            background: #545659; }
+
+        body ::selection {
+            background: #545659; }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: #EEEEEE; }
+
+        ::-webkit-scrollbar {
+            width: 0; }
+
+        /* Import SCSS
+         * --------------------------------------- */
+        @-webkit-keyframes pulse {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1); }
+            60% {
+                -webkit-transform: scale(1.08);
+                transform: scale(1.08); }
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1); } }
+        @keyframes pulse {
+            0% {
+                -webkit-transform: scale(1);
+                transform: scale(1); }
+            60% {
+                -webkit-transform: scale(1.08);
+                transform: scale(1.08); }
+            100% {
+                -webkit-transform: scale(1);
+                transform: scale(1); } }
+
+        @-webkit-keyframes spinstart {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px;
+                border-right: 2px solid #00FF88; }
+            99% {
+                width: 248px;
+                border-right: 2px solid #00FF88; }
+            100% {
+                width: 248px;
+                border-right: 0px; } }
+
+        @keyframes spinstart {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px;
+                border-right: 2px solid #00FF88; }
+            99% {
+                width: 248px;
+                border-right: 2px solid #00FF88; }
+            100% {
+                width: 248px;
+                border-right: 0px; } }
+
+        @-webkit-keyframes spin1 {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px; }
+            99% {
+                width: 328px; }
+            100% {
+                width: 328px;
+                border-right: 0px; } }
+
+        @keyframes spin1 {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px; }
+            99% {
+                width: 328px; }
+            100% {
+                width: 328px;
+                border-right: 0px; } }
+
+        @-webkit-keyframes spin2 {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px; }
+            99% {
+                width: 150px; }
+            100% {
+                width: 150px;
+                border-right: 0px; } }
+
+        @keyframes spin2 {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px; }
+            99% {
+                width: 150px; }
+            100% {
+                width: 150px;
+                border-right: 0px; } }
+
+        @-webkit-keyframes spin3 {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px;
+                border-right: 2px solid #00FF88; }
+            99% {
+                width: 144px; }
+            100% {
+                width: 144px;
+                border-right: 0px; } }
+
+        @keyframes spin3 {
+            0% {
+                width: 0px;
+                border-right: 0px; }
+            1% {
+                width: 0px;
+                border-right: 2px solid #00FF88; }
+            99% {
+                width: 144px; }
+            100% {
+                width: 144px;
+                border-right: 0px; } }
+
+        @-webkit-keyframes pulseOpacity {
+            0% {
+                opacity: 0; }
+            50% {
+                opacity: 1; }
+            100% {
+                opacity: 0; } }
+
+        @keyframes pulseOpacity {
+            0% {
+                opacity: 0; }
+            50% {
+                opacity: 1; }
+            100% {
+                opacity: 0; } }
+
+        @-webkit-keyframes initOpacity {
+            0% {
+                opacity: 0; }
+            100% {
+                opacity: 1; } }
+
+        @keyframes initOpacity {
+            0% {
+                opacity: 0; }
+            100% {
+                opacity: 1; } }
+
+        .nooder-protection {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0); }
+        .nooder-protection-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 40px;
+            -webkit-animation-name: pulse;
+            animation-name: pulse;
+            -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+        .nooder-protection .terminal {
+            width: 90%;
+            margin: auto;
+            max-width: 760px; }
+        .nooder-protection .terminal .terminal-header {
+            position: relative;
+            background-color: #585858;
+            height: 30px;
+            line-height: 30px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding-left: 10px; }
+        .nooder-protection .terminal .terminal-header .close, .nooder-protection .terminal .terminal-header .other {
+            margin-left: 5px;
+            position: relative;
+            top: 50%;
+            -webkit-transform: translate3d(0, -50%, 0);
+            transform: translate3d(0, -50%, 0); }
+        .nooder-protection .terminal .terminal-header .close {
+            background-color: #E55B2C;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%; }
+        .nooder-protection .terminal .terminal-header .other {
+            background-color: #85847E;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%; }
+        .nooder-protection .terminal .terminal-header .conn {
+            color: #EEEEEE;
+            margin-left: 12px;
+            font-size: 12px; }
+        .nooder-protection .terminal .terminal-content {
+            position: relative;
+            background-color: #1A1A1A;
+            padding: 15px;
+            color: #00FF88;
+            font-weight: bold;
+            min-height: 300px; }
+        .nooder-protection .terminal .terminal-content .welcome {
+            text-align: center;
+            margin-bottom: 20px;
+            -webkit-animation-name: initOpacity;
+            animation-name: initOpacity;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1; }
+        .nooder-protection .terminal .terminal-content span {
+            -webkit-animation-name: pulseOpacity;
+            animation-name: pulseOpacity;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+        .nooder-protection .terminal .terminal-content .input-start {
+            height: 19px;
+            font-size: 16px;
+            position: absolute;
+            left: 15px;
+            border-right: 2px solid #00FF88;
+            overflow: hidden;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: spinstart;
+            animation-name: spinstart; }
+        .nooder-protection .terminal .terminal-content .input-1 {
+            margin-top: 24px;
+            height: 19px;
+            font-size: 16px;
+            position: absolute;
+            left: 15px;
+            border-right: 2px solid #00FF88;
+            overflow: hidden;
+            -webkit-animation-delay: 2s;
+            animation-delay: 2s;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: spin1;
+            animation-name: spin1; }
+        .nooder-protection .terminal .terminal-content .input-2 {
+            margin-top: 48px;
+            height: 19px;
+            font-size: 16px;
+            position: absolute;
+            left: 15px;
+            border-right: 2px solid #00FF88;
+            overflow: hidden;
+            -webkit-animation-delay: 3s;
+            animation-delay: 3s;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: spin2;
+            animation-name: spin2; }
+        .nooder-protection .terminal .terminal-content .input-3 {
+            margin-top: 72px;
+            height: 19px;
+            font-size: 16px;
+            position: absolute;
+            left: 15px;
+            border-right: 2px solid #00FF88;
+            overflow: hidden;
+            -webkit-animation-delay: 3.5s;
+            animation-delay: 3.5s;
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: spin3;
+            animation-name: spin3; }
